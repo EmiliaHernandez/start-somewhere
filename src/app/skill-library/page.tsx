@@ -1,4 +1,8 @@
 import { supabase } from "@/lib/supabaseClient";
+import Header from "../components/Header";
+import Footer from "../components/footer";
+import Image from "next/image";
+import QuizCallout from "../components/QuizCallout";
 
 // Define the structure of a Skill row
 type Skills = {
@@ -29,28 +33,47 @@ export default async function SkillLibraryPage() {
   }, {});
 
   return (
-    <main className="p-8 max-w-5xl mx-auto text-white">
-      <h1 className="text-4xl font-bold mb-8 text-zip-blue">Skill Library</h1>
+    <>
+<Header></Header>
+    <main className=" mx-auto dark-mlue-bg text-white">
+      <section className="flex justify-center gap-10 self-stretch">
+        <div>
+      <h1 className="main-heading mb-8">Skill Library</h1>
+      <h2>Read through all our options and select a starting point</h2>
+</div>
+<div>
+  <Image
+      src="/ImagePlaceholder.png"
+      className="m-auto ImageEffect"
+        width={100}
+        height={150}
+        alt="Placeholder art"/>
+</div>
+      </section>
 
-      <div className="space-y-10">
+      <div className="space-y-10 w-[80%] m-auto">
         {Object.entries(grouped).map(([category, items]) => (
           <section key={category}>
-            <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">
+            <h2 className="subheading mb-4 border-b border-gray-700 pb-2">
               {category}
             </h2>
             <div className="flex flex-wrap gap-3">
               {items.map((Skills) => (
                 <button
                   key={Skills.id}
-                  className="bg-gray-800 hover:bg-zip-blue/80 text-white px-4 py-2 rounded-lg transition-all duration-200"
+                  className="white-button transition-all duration-200"
                 >
                   {Skills.title}
                 </button>
               ))}
             </div>
           </section>
+          
         ))}
       </div>
+      <QuizCallout></QuizCallout>
     </main>
+    <Footer></Footer>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,8 +13,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-Jaro);
+  --font-mono: var(--font-Jaro);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,4 +28,161 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,h2,h3{
+  font-family:Jaro;
+}
+
+@layer components {
+  .ribbon {
+    @apply bg-[#8EC5F8] text-black rotate-[1deg] py-2 text-nowrap truncate font-[Jaro];
+  }
+  .callout {
+    @apply bg-[#8EC5F8] text-black py-2 font-[Jaro];
+  }
+  .white-button{
+    @apply hover:bg-[#8EC5F8] bg-white text-black px-6 py-3 rounded-lg  font-[Jaro];
+  }
+    .mlue-text{
+    @apply text-[#8ec5f8]
+  }
+
+  .mlue-gradient-bg{
+    background: radial-gradient(156.28% 80.32% at 104.2% 50%, #000B7F 0%, #003360 46.64%, #000219 100%);
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); 
+  }
+
+  .imageEffect{
+    background-blend-mode: luminosity;
+  }
+  .dark-mlue-bg{
+background-color: #000219;
+  }
+  
+  .main-heading{
+    @apply text-5xl mb-4 ;
+  }
+
+  .subheading{
+    color: var(--White, #FFF);
+font-family: Jaro;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+  .footer-links{
+    color: #FFF;
+text-align: right;
+font-family: Jaro;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+  .header-links{
+    color: #FFF;
+text-align: right;
+font-family: Jaro;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+
+  .hero-gradient{
+    background: radial-gradient(288.31% 94.38% at 60.68% 102.47%, rgba(0, 0, 0, 0.00) 0%, rgba(33, 36, 217, 0.10) 48.56%, rgba(17, 20, 149, 0.20) 100%), #000219;
+  }
+
+  .link-hover{
+    @apply hover:text-[#8EC5F8]
+  }
+
+  .legal-links{
+    color: white;
+font-family: Jaro;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+}
+.accordionWrapper
+{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 15px;
+align-self: stretch;}
+
+.accordionItem{
+    float:left;
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    font-family:'Open-sans',Arial,sans-serif;
+  border-radius: 10px;
+background: rgba(255, 255, 255, 0.05);
+}
+.accordionItemHeading{
+    cursor:pointer;
+    margin:0px 0px 10px 0px;
+    padding:15px;
+    color:#fff;
+    width:100%;
+    -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+        box-sizing: border-box;
+}
+.close .accordionItemContent{
+    height:0px;
+    transition:height 1s ease-out;
+    -webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+    float:left;
+    display:block;
+    
+    
+}
+.open .accordionItemContent{
+        padding: 20px;
+  color:white;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    display:block;
+    -webkit-transform: scaleY(1);
+	-o-transform: scaleY(1);
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+    -webkit-transform-origin: top;
+	-o-transform-origin: top;
+	-ms-transform-origin: top;
+	transform-origin: top;
+
+	-webkit-transition: -webkit-transform 0.4s ease-out;
+	-o-transition: -o-transform 0.4s ease;
+	-ms-transition: -ms-transform 0.4s ease;
+	transition: transform 0.4s ease;
+        box-sizing: border-box;
+}
+
+.open .accordionItemHeading{
+    margin:0px;
+        -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    color: #ffffff;
 }
