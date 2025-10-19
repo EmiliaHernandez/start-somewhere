@@ -17,7 +17,7 @@ export default function Footer() {
         <Link className="link-hover" href="/skill-library"> Terms of Conditions </Link>
         </div>
       </div>
-      <div className="footer-links flex flex-col">
+      <div className="header-links flex flex-col">
         <Link className="link-hover" href="/about"> About </Link>
         <Link className="link-hover" href="/quiz"> Quiz </Link>
         <Link className="link-hover" href="/skill-library"> Skill Library </Link>

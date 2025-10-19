@@ -37,7 +37,7 @@ export default function Home() {
       {/*Ribbon with skills */}
       <section>
         <div className="ribbon">
-          <p>Web Dev * Data Visualization * Python * 3D Art * Web Design * Skill * Skill * Web Dev * Data Visualization * Python * 3D Art * Web Design * Skill * Skill * Web Dev * Data Visualization * Python * 3D Art * Web Design * Skill * Skill * Skill</p>
+          <p>3D Art * Web Design * Video Editing * Python Programming * Data Vizualization *  Illustration * Automation * 3D Art * Web Design * Video Editing * Python Programming * Data Vizualization *  Illustration * Automation</p>
         </div>
       </section>
       {/*How it works section */}

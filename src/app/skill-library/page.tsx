@@ -3,12 +3,14 @@ import Header from "../components/Header";
 import Footer from "../components/footer";
 import Image from "next/image";
 import QuizCallout from "../components/QuizCallout";
+import Link from "next/link";
 
 // Define the structure of a Skill row
 type Skills = {
   id: string | number;
-  name: string;
+  title: string;
   category?: string;
+  slug?: string;
 };
 
 export default async function SkillLibraryPage() {
@@ -36,9 +38,9 @@ export default async function SkillLibraryPage() {
     <>
 <Header></Header>
     <main className=" mx-auto dark-mlue-bg text-white">
-      <section className="flex justify-center gap-10 self-stretch">
+      <section className="flex w-[80%] m-auto justify-center gap-10 self-stretch">
         <div>
-      <h1 className="main-heading mb-8">Skill Library</h1>
+      <h1 className="main-heading mb-8">Explore the full skill library</h1>
       <h2>Read through all our options and select a starting point</h2>
 </div>
 <div>
@@ -59,12 +61,13 @@ export default async function SkillLibraryPage() {
             </h2>
             <div className="flex flex-wrap gap-3">
               {items.map((Skills) => (
-                <button
-                  key={Skills.id}
-                  className="white-button transition-all duration-200"
-                >
-                  {Skills.title}
-                </button>
+                <Link
+  key={Skills.id}
+  href={`/skill-library/${encodeURIComponent(Skills.slug)}`} // or use slug
+  className="white-button transition-all duration-200"
+>
+  {Skills.title}
+</Link>
               ))}
             </div>
           </section>

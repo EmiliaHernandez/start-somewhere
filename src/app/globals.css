@@ -4,30 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-Jaro);
   --font-mono: var(--font-Jaro);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1,h2,h3{
@@ -72,15 +53,6 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
   }
-  .footer-links{
-    color: #FFF;
-text-align: right;
-font-family: Jaro;
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-  }
   .header-links{
     color: #FFF;
 text-align: right;
@@ -90,6 +62,21 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
   }
+
+.projectTech{
+  color: #8EC5F8;
+font-family: Jaro;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: none;
+text-decoration-color: #8EC5F8;
+text-decoration-thickness: 15.5%; /* 5.58px */
+text-underline-offset: 19%; /* 6.84px */
+text-underline-position: from-font;
+}
 
   .hero-gradient{
     background: radial-gradient(288.31% 94.38% at 60.68% 102.47%, rgba(0, 0, 0, 0.00) 0%, rgba(33, 36, 217, 0.10) 48.56%, rgba(17, 20, 149, 0.20) 100%), #000219;
@@ -135,6 +122,7 @@ background: rgba(255, 255, 255, 0.05);
 -moz-border-radius: 3px;
 border-radius: 3px;
         box-sizing: border-box;
+        font-size:20px;
 }
 .close .accordionItemContent{
     height:0px;
@@ -185,4 +173,73 @@ border-radius: 3px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     color: #ffffff;
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
